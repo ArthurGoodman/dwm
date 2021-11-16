@@ -8,8 +8,8 @@ license=('MIT')
 options=(zipman)
 depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'dmenu')
 install=dwm.install
-source=(git://github.com/ArthurGoodman/dwm.git dwm.desktop)
-sha256sums=('SKIP' 'SKIP')
+source=(git://github.com/ArthurGoodman/dwm.git)
+sha256sums=('SKIP')
 
 provides=("$pkgname")
 conflicts=("$pkgname")
@@ -29,5 +29,5 @@ package() {
   make PREFIX=/usr DESTDIR="$pkgdir" install
   install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -m644 -D README "$pkgdir/usr/share/doc/$pkgname/README"
-  install -m644 -D "$srcdir/dwm.desktop" "$pkgdir/usr/share/xsessions/dwm.desktop"
+  #install -m644 -D "$srcdir/dwm.desktop" "$pkgdir/usr/share/xsessions/dwm.desktop"
 }
